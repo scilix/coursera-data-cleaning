@@ -37,13 +37,11 @@ names(subject_data) <- c("subject_key")
 
 columns_to_extract <- grep("_mean\\(\\)|_std\\(\\)", column_labels$label, value = T)
 
-data_complete <- bind_cols(data_raw[,columns_to_extract], activity_data, subject_data)
-
-rm(data_raw, train_data, test_data)
+data_all <- bind_cols(data_raw[,columns_to_extract], activity_data, subject_data)
 
 # name activities
 
-data_named <- data_complete %>% 
+data_complete <- data_all %>% 
     left_join(activity_labels, by=c("activity_key" = "activity_key")) %>% 
     select(-activity_key)
 
@@ -53,4 +51,9 @@ mean_per_activity_and_subject <- data_named %>%
     group_by(activity_label, subject_key) %>% 
     summarize_all(mean)
 
+# write results to txt file, as required by the project
+
 write.table(mean_per_activity_and_subject, "output.txt", row.names = F)
+
+all_vars <- ls()
+rm(list = all_vars[!all_vars %in% c("data_complete","mean_per_activity_and_subject")])
