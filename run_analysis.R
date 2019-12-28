@@ -57,3 +57,4 @@ write.table(mean_per_activity_and_subject, "output.txt", row.names = F)
 
 all_vars <- ls()
 rm(list = all_vars[!all_vars %in% c("data_complete","mean_per_activity_and_subject")])
+rm(all_vars)
