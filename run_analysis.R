@@ -47,7 +47,7 @@ data_complete <- data_all %>%
 
 # average per activity and subject
 
-mean_per_activity_and_subject <- data_named %>% 
+mean_per_activity_and_subject <- data_complete %>% 
     group_by(activity_label, subject_key) %>% 
     summarize_all(mean)
 

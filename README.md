@@ -25,10 +25,17 @@ An active internet connection is necessary for this to work.
 
 ### Data cleaning and analysis
 
-All required data cleaning, analysis and output is performed by the script **run_analysis.R**. Despite the above mentioned package and data requirements, it has no further dependencies. In a shell simply execute:
+All required data cleaning, analysis and output is performed by the script **run_analysis.R**. Despite the above mentioned package and data requirements, it has no further dependencies. 
+
+In an R session execute:
+```
+source("run_analysis.R")
+```
+
+To run from a shell:
 
 ```
-Rscript -e run_analysis.R
+Rscript run_analysis.R
 ```
 
 

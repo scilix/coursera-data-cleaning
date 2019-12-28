@@ -83,7 +83,7 @@ The script **run_analysis.R** creates two dataframes and a txt.file in the proje
 
 **Rows**: Each row contains the average of all measurements for the combination of activity and subject given in the coloumns *subject_key* and *activity_label* in this row.
 
-**Columns**: Same as in the first dataset.
+**Columns**: Same as in the first dataset, but *subject_key* and *activity_label* are now the first and second row.
 
 ### File, named **output.txt**:
 
